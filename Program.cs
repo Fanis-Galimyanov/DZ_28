@@ -10,28 +10,28 @@ foreach (var day in week)
 class WeekEnumerator : IEnumerator
 {
     string[] days;
-    int position = -1;
+    int position = 8;
     public WeekEnumerator(string[] days) => this.days = days;
     public object Current
     {
         get
         {
-            if (position == -1 || position >= days.Length)
-                throw new ArgumentException();
+            //if (position == -1 || position >= days.Length) // не понял зачем эта проверка
+            //    throw new ArgumentException();
             return days[position];
         }
     }
     public bool MoveNext()
     {
-        if (position < days.Length - 1)
+        if (position >= 2)
         {
-            position++;
+            position = position - 2;
             return true;
         }
         else
             return false;
     }
-    public void Reset() => position = -1;
+    public void Reset() => position = 8;
 }
 class Week
 {
