@@ -10,7 +10,7 @@ foreach (var day in week)
 class WeekEnumerator : IEnumerator
 {
     string[] days;
-    int position = 0;
+    int position = -2;
     public WeekEnumerator(string[] days) => this.days = days;
     public object Current
     {
@@ -31,7 +31,7 @@ class WeekEnumerator : IEnumerator
         else
             return false;
     }
-    public void Reset() => position = 0;
+    public void Reset() => position = -2;
 }
 class Week
 {
