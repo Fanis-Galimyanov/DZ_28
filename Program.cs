@@ -7,8 +7,6 @@ foreach (var day in week)
     Console.WriteLine(day);
 }
 
-Console.WriteLine("\nТест, прошу это игнорировать");
-
 class WeekEnumerator : IEnumerator
 {
     string[] days;
